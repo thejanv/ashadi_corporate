@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ashadi Jewellers Corporate – Premium gold coin gifting solutions for businesses, banks, and organizations across Sri Lanka. Bulk orders, custom branding, island-wide delivery.">
+<title>Corporate Sales | Ashadi Jewellers</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  const EMAILJS_PUBLIC_KEY  = 'Ik2aalp1DgxdGVfDR';       // Account → API Keys
+  const EMAILJS_SERVICE_ID  = 'service_kyjci5q';       // Email Services tab
+  const EMAILJS_TEMPLATE_ID = 'template_6i22pwe';      // Email Templates tab
+
+  emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+</script>
+
+<style>
+
+/* ── RESET & VARIABLES ─────────────────────────────── */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+
+:root{
+  --navy:   #081225;
+  --gold:   #d4af37;
+  --gold2:  #b8941e;
+  --light:  #f7f6f2;
+  --white:  #ffffff;
+  --grey:   #666;
+  --radius: 14px;
+  --shadow: 0 6px 24px rgba(0,0,0,0.09);
+}
+
+body{
+  font-family:'Poppins', sans-serif;
+  background:var(--light);
+  color:#222;
+  line-height:1.65;
+  overflow-x:hidden;
+}
+
+/* ── UTILITY ───────────────────────────────────────── */
+.container{ width:90%; max-width:1280px; margin:auto; }
+section{ padding:96px 0; }
+
+.section-title{ text-align:center; margin-bottom:60px; }
+.section-title h2{
+  font-family:'Cormorant Garamond', serif;
+  font-size:46px; font-weight:700;
+  color:var(--navy); margin-bottom:14px;
+  letter-spacing:-0.5px;
+}
+.section-title p{ max-width:680px; margin:auto; color:var(--grey); }
+
+.btn{
+  display:inline-block;
+  padding:15px 32px;
+  background:var(--gold);
+  color:#000;
+  text-decoration:none;
+  border-radius:6px;
+  font-weight:600;
+  font-size:15px;
+  transition:background .25s, transform .25s, box-shadow .25s;
+  border:none; cursor:pointer;
+}
+.btn:hover{
+  background:var(--gold2);
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(212,175,55,.35);
+}
+.btn-outline{
+  background:transparent;
+  border:2px solid var(--gold);
+  color:var(--gold);
+}
+.btn-outline:hover{
+  background:var(--gold);
+  color:#000;
+}
+
+/* ── HEADER ────────────────────────────────────────── */
+header{
+  position:fixed; width:100%; top:0; z-index:999;
+  background:rgba(8,18,37,.96);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(212,175,55,.15);
+  transition:padding .3s;
+}
+
+.navbar{
+  display:flex; justify-content:space-between;
+  align-items:center; padding:16px 0;
+}
+
+.logo{
+  color:var(--gold);
+  font-family:'Cormorant Garamond', serif;
+  font-size:28px; font-weight:700;
+  text-decoration:none;
+  display:flex; flex-direction:column; line-height:1.1;
+}
+.logo span{ color:#aaa; font-size:12px; font-weight:400; font-family:'Poppins',sans-serif; letter-spacing:2px; text-transform:uppercase; }
+
+.nav-links{ display:flex; gap:28px; align-items:center; }
+.nav-links a{
+  color:#ccc; text-decoration:none;
+  font-size:14px; font-weight:500;
+  transition:color .2s;
+}
+.nav-links a:hover{ color:var(--gold); }
+.nav-cta{ padding:10px 22px !important; }
+
+/* Hamburger */
+.hamburger{
+  display:none; flex-direction:column; gap:5px;
+  cursor:pointer; background:none; border:none; padding:6px;
+}
+.hamburger span{
+  display:block; width:24px; height:2px;
+  background:white; border-radius:2px;
+  transition:all .3s;
+}
+.hamburger.open span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2){ opacity:0; }
+.hamburger.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+
+/* Mobile nav drawer */
+.mobile-nav{
+  display:none;
+  flex-direction:column;
+  gap:0;
+  background:rgba(8,18,37,.98);
+  border-top:1px solid rgba(212,175,55,.15);
+  padding:10px 0 20px;
+}
+.mobile-nav a{
+  color:#ccc; text-decoration:none;
+  padding:13px 20px; font-size:15px;
+  border-bottom:1px solid rgba(255,255,255,.05);
+  transition:color .2s, background .2s;
+}
+.mobile-nav a:hover{ color:var(--gold); background:rgba(255,255,255,.03); }
+.mobile-nav.open{ display:flex; }
+
+/* ── HERO ──────────────────────────────────────────── */
+.hero{
+  min-height:100vh;
+  display:flex; align-items:center;
+  background:
+    linear-gradient(135deg,rgba(8,18,37,.88) 40%,rgba(8,18,37,.65)),
+    url('https://images.unsplash.com/photo-1610375461246-83df859d849d?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat;
+  color:white;
+  position:relative;
+}
+
+/* subtle gold shimmer bar */
+.hero::after{
+  content:''; position:absolute;
+  bottom:0; left:0; right:0; height:4px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+
+.hero-content{ max-width:680px; animation:fadeUp .9s ease both; }
+
+.hero-badge{
+  display:inline-block;
+  background:rgba(212,175,55,.18);
+  border:1px solid rgba(212,175,55,.4);
+  color:var(--gold);
+  padding:6px 18px; border-radius:50px;
+  font-size:13px; letter-spacing:1.5px;
+  text-transform:uppercase; margin-bottom:24px;
+}
+
+.hero h1{
+  font-family:'Cormorant Garamond', serif;
+  font-size:72px; line-height:1.05;
+  margin-bottom:22px; color:var(--gold);
+  font-weight:700;
+}
+
+.hero p{
+  font-size:18px; color:#ddd;
+  margin-bottom:36px; max-width:560px;
+}
+
+.hero-actions{ display:flex; gap:14px; flex-wrap:wrap; }
+
+@keyframes fadeUp{
+  from{ opacity:0; transform:translateY(30px); }
+  to  { opacity:1; transform:translateY(0); }
+}
+
+/* ── FEATURES ──────────────────────────────────────── */
+.features{ background:white; }
+
+.feature-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:28px;
+}
+
+.feature-box{
+  padding:40px 30px;
+  border-radius:var(--radius);
+  text-align:center;
+  border:1px solid #eee;
+  background:white;
+  transition:transform .3s, box-shadow .3s, border-color .3s;
+  position:relative; overflow:hidden;
+}
+.feature-box::before{
+  content:''; position:absolute;
+  top:0; left:0; right:0; height:3px;
+  background:var(--gold);
+  transform:scaleX(0); transform-origin:left;
+  transition:transform .35s;
+}
+.feature-box:hover::before{ transform:scaleX(1); }
+.feature-box:hover{ transform:translateY(-8px); box-shadow:var(--shadow); border-color:#d4af3740; }
+.feature-icon{ font-size:46px; margin-bottom:18px; display:block; }
+.feature-box h3{ margin-bottom:12px; color:var(--navy); font-size:17px; }
+.feature-box p{ color:var(--grey); font-size:14px; }
+
+/* ── SOLUTIONS ─────────────────────────────────────── */
+.solutions{ background:#f0f2f7; }
+
+.solution-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
+  gap:28px;
+}
+
+.solution-card{
+  background:white; border-radius:var(--radius);
+  overflow:hidden; box-shadow:var(--shadow);
+  transition:transform .3s, box-shadow .3s;
+}
+.solution-card:hover{ transform:translateY(-8px); box-shadow:0 16px 40px rgba(0,0,0,.13); }
+.solution-card img{ width:100%; height:220px; object-fit:cover; transition:transform .5s; }
+.solution-card:hover img{ transform:scale(1.05); }
+.solution-content{ padding:26px; }
+.solution-content h3{ margin-bottom:10px; color:var(--navy); font-size:18px; }
+.solution-content p{ color:var(--grey); font-size:14px; }
+
+/* ── PRODUCTS ──────────────────────────────────────── */
+.products{ background:white; }
+
+.product-wrapper{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:32px;
+}
+
+.product-box{
+  background:var(--light);
+  padding:36px;
+  border-radius:var(--radius);
+  border:1px solid #e8e5d8;
+}
+.product-box h3{
+  font-family:'Cormorant Garamond', serif;
+  font-size:26px; margin-bottom:22px;
+  color:var(--navy); font-weight:700;
+}
+.product-box ul{ list-style:none; }
+.product-box ul li{
+  margin-bottom:14px;
+  padding-left:28px; position:relative;
+  font-size:15px;
+}
+.product-box ul li::before{
+  content:"✔"; position:absolute; left:0;
+  color:var(--gold); font-size:13px;
+}
+
+/* ── STATS ─────────────────────────────────────────── */
+.stats{ background:var(--navy); color:white; padding:72px 0; }
+
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:30px; text-align:center;
+}
+.stat-box h2{
+  font-family:'Cormorant Garamond', serif;
+  font-size:58px; color:var(--gold); line-height:1;
+}
+.stat-box p{ margin-top:10px; font-size:15px; color:#aaa; }
+
+/* ── TESTIMONIALS ──────────────────────────────────── */
+.testimonials{ background:var(--light); }
+
+.testi-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:28px;
+}
+.testi-card{
+  background:white; border-radius:var(--radius);
+  padding:32px; box-shadow:var(--shadow);
+  position:relative; border-top:4px solid var(--gold);
+}
+.testi-quote{
+  font-size:48px; color:var(--gold);
+  line-height:0.6; margin-bottom:18px;
+  font-family:'Cormorant Garamond', serif;
+  font-weight:700;
+}
+.testi-card p{
+  color:#444; font-size:15px;
+  font-style:italic; margin-bottom:22px;
+  line-height:1.75;
+}
+.testi-author{ display:flex; align-items:center; gap:14px; }
+.testi-avatar{
+  width:46px; height:46px; border-radius:50%;
+  background:var(--gold); display:flex;
+  align-items:center; justify-content:center;
+  color:var(--navy); font-weight:700; font-size:16px;
+  flex-shrink:0;
+}
+.testi-author strong{ display:block; font-size:14px; color:var(--navy); }
+.testi-author span{ font-size:12px; color:var(--grey); }
+
+/* ── PROCESS ───────────────────────────────────────── */
+.process{ background:white; }
+
+.process-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:30px; position:relative;
+}
+
+.process-step{ text-align:center; }
+
+.process-number{
+  width:64px; height:64px;
+  background:var(--gold); border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  margin:0 auto 18px; font-size:22px;
+  font-weight:700; color:var(--navy);
+  box-shadow:0 4px 16px rgba(212,175,55,.4);
+}
+.process-step h3{ font-size:15px; color:var(--navy); font-weight:600; }
+
+/* ── FAQ ───────────────────────────────────────────── */
+.faq{ background:var(--light); }
+
+.faq-list{ max-width:800px; margin:auto; display:flex; flex-direction:column; gap:14px; }
+
+.faq-item{
+  background:white; border-radius:var(--radius);
+  border:1px solid #eee; overflow:hidden;
+}
+.faq-question{
+  width:100%; text-align:left;
+  padding:20px 24px; background:none; border:none;
+  cursor:pointer; font-size:16px; font-weight:600;
+  color:var(--navy); display:flex; justify-content:space-between;
+  align-items:center; gap:12px;
+  font-family:'Poppins', sans-serif;
+}
+.faq-icon{
+  font-size:22px; color:var(--gold);
+  transition:transform .3s; flex-shrink:0;
+}
+.faq-item.open .faq-icon{ transform:rotate(45deg); }
+.faq-answer{
+  max-height:0; overflow:hidden;
+  transition:max-height .4s ease, padding .3s;
+  padding:0 24px; color:var(--grey); font-size:15px;
+  line-height:1.7;
+}
+.faq-item.open .faq-answer{ max-height:300px; padding:4px 24px 22px; }
+
+/* ── CTA ───────────────────────────────────────────── */
+.cta{
+  background:
+    linear-gradient(rgba(8,18,37,.85),rgba(8,18,37,.85)),
+    url('https://images.unsplash.com/photo-1610375461369-d613b5645c87?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+  text-align:center; color:white;
+}
+.cta h2{
+  font-family:'Cormorant Garamond', serif;
+  font-size:52px; margin-bottom:18px;
+}
+.cta p{ max-width:640px; margin:0 auto 32px; color:#ccc; }
+.cta-actions{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+
+/* ── CONTACT ───────────────────────────────────────── */
+.contact{ background:white; }
+
+.contact-wrapper{
+  display:grid;
+  grid-template-columns:1fr 1.4fr;
+  gap:40px;
+}
+
+.contact-info{ background:var(--navy); border-radius:var(--radius); padding:40px; color:white; }
+.contact-info h3{
+  font-family:'Cormorant Garamond', serif;
+  font-size:28px; color:var(--gold);
+  margin-bottom:28px; font-weight:700;
+}
+.contact-info-item{
+  display:flex; gap:14px; margin-bottom:22px; align-items:flex-start;
+}
+.contact-info-icon{
+  font-size:20px; flex-shrink:0; margin-top:2px;
+}
+.contact-info-item strong{ display:block; font-size:13px; color:var(--gold); margin-bottom:3px; letter-spacing:.5px; }
+.contact-info-item span{ font-size:15px; color:#ccc; }
+
+/* FORM */
+.contact-form{ background:var(--light); border-radius:var(--radius); padding:40px; }
+.contact-form h3{
+  font-family:'Cormorant Garamond', serif;
+  font-size:28px; color:var(--navy);
+  margin-bottom:28px; font-weight:700;
+}
+
+.form-row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+
+.form-group{ margin-bottom:18px; }
+.form-group label{
+  display:block; font-size:13px; font-weight:600;
+  color:var(--navy); margin-bottom:7px; letter-spacing:.3px;
+}
+.form-group input,
+.form-group select,
+.form-group textarea{
+  width:100%; padding:12px 16px;
+  border:1.5px solid #ddd; border-radius:8px;
+  font-size:14px; font-family:'Poppins', sans-serif;
+  background:white; color:#222;
+  transition:border-color .2s, box-shadow .2s;
+  outline:none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+  border-color:var(--gold);
+  box-shadow:0 0 0 3px rgba(212,175,55,.15);
+}
+.form-group textarea{ resize:vertical; min-height:110px; }
+.form-success{
+  display:none; background:#e8f5e9; border:1px solid #81c784;
+  border-radius:8px; padding:16px 20px;
+  color:#2e7d32; font-size:15px; margin-top:16px;
+}
+
+/* ── FOOTER ────────────────────────────────────────── */
+footer{
+  background:var(--navy); color:#888;
+  padding:48px 0 32px;
+}
+.footer-grid{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:32px; margin-bottom:40px;
+}
+.footer-col h4{
+  color:var(--gold); font-size:14px;
+  letter-spacing:1.5px; text-transform:uppercase;
+  margin-bottom:16px;
+}
+.footer-col p, .footer-col a{
+  color:#888; font-size:14px; display:block;
+  margin-bottom:9px; text-decoration:none;
+  transition:color .2s;
+}
+.footer-col a:hover{ color:var(--gold); }
+.footer-logo{
+  font-family:'Cormorant Garamond', serif;
+  font-size:24px; font-weight:700; color:var(--gold);
+  margin-bottom:10px; display:block;
+}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.08);
+  padding-top:24px; text-align:center;
+  font-size:13px; color:#555;
+}
+
+/* ── WHATSAPP ──────────────────────────────────────── */
+.whatsapp-btn{
+  position:fixed; right:22px; bottom:22px;
+  width:58px; height:58px;
+  background:#25D366; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  text-decoration:none;
+  box-shadow:0 6px 20px rgba(37,211,102,.45);
+  z-index:998; transition:transform .2s, box-shadow .2s;
+}
+.whatsapp-btn:hover{
+  transform:scale(1.1);
+  box-shadow:0 8px 28px rgba(37,211,102,.6);
+}
+.whatsapp-btn svg{ width:30px; height:30px; fill:white; }
+
+/* ── RESPONSIVE ────────────────────────────────────── */
+@media(max-width:900px){
+  .contact-wrapper{ grid-template-columns:1fr; }
+  .hero h1{ font-size:52px; }
+  .section-title h2{ font-size:36px; }
+  .cta h2{ font-size:38px; }
+}
+
+@media(max-width:768px){
+  .nav-links{ display:none; }
+  .hamburger{ display:flex; }
+  .hero h1{ font-size:42px; }
+  .form-row{ grid-template-columns:1fr; }
+  section{ padding:70px 0; }
+}
+
+@media(max-width:480px){
+  .hero h1{ font-size:34px; }
+  .hero p{ font-size:16px; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ──────────────────────────────────────── -->
+<header>
+  <div class="container navbar">
+
+    <a href="#" class="logo">
+      Ashadi Jewellers
+      <span>Corporate Division</span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#solutions">Solutions</a>
+      <a href="#testimonials">Clients</a>
+      <a href="#process">Process</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://ashadijewellers.com">Main Site</a>
+      <a href="#contact" class="btn nav-cta">Get a Quote</a>
+    </nav>
+
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="#solutions">Solutions</a>
+    <a href="#testimonials">Clients</a>
+    <a href="#process">Process</a>
+    <a href="#faq">FAQ</a>
+    <a href="https://ashadijewellers.com">Main Website</a>
+    <a href="#contact" style="color:var(--gold);font-weight:600;">→ Get a Quote</a>
+  </nav>
+</header>
+
+<!-- ── HERO ────────────────────────────────────────── -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+
+      <div class="hero-badge">Sri Lanka's Trusted Corporate Gifting Partner</div>
+
+      <h1>Corporate Gold Coin Solutions</h1>
+
+      <p>
+        Premium gold gifting and employee recognition solutions crafted
+        for businesses, banks, and organizations across Sri Lanka.
+        Trusted since 2008.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#contact" class="btn">Request a Quotation</a>
+        <a href="#solutions" class="btn btn-outline">Explore Solutions</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── FEATURES ────────────────────────────────────── -->
+<section class="features">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Why Choose Gold Coins?</h2>
+      <p>Timeless gifts that convey prestige, appreciation, and lasting value for your team and clients.</p>
+    </div>
+
+    <div class="feature-grid">
+
+      <div class="feature-box">
+        <span class="feature-icon">💎</span>
+        <h3>Premium Value</h3>
+        <p>Gold retains value and communicates genuine appreciation — gifts that recipients truly treasure.</p>
+      </div>
+
+      <div class="feature-box">
+        <span class="feature-icon">🎁</span>
+        <h3>Custom Branding</h3>
+        <p>Your company logo on the coin or packaging. Personalized for events, milestones, and campaigns.</p>
+      </div>
+
+      <div class="feature-box">
+        <span class="feature-icon">🏢</span>
+        <h3>Corporate Solutions</h3>
+        <p>Tailored for companies, banks, hotels, government institutions, and NGOs island-wide.</p>
+      </div>
+
+      <div class="feature-box">
+        <span class="feature-icon">🚚</span>
+        <h3>Bulk Orders</h3>
+        <p>Flexible quantities from 10 to 10,000+ units with secure, insured island-wide delivery.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── SOLUTIONS ───────────────────────────────────── -->
+<section class="solutions" id="solutions">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Corporate Gift Solutions</h2>
+      <p>Gold gifting programs designed for every business occasion and recognition need.</p>
+    </div>
+
+    <div class="solution-grid">
+
+      <div class="solution-card">
+        <img
+          src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200&auto=format&fit=crop"
+          alt="Employee recognition award ceremony">
+        <div class="solution-content">
+          <h3>Employee Recognition</h3>
+          <p>Reward long service, outstanding achievements, and loyalty milestones with gold that lasts a lifetime.</p>
+        </div>
+      </div>
+
+      <div class="solution-card">
+        <img
+          src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1200&auto=format&fit=crop"
+          alt="Executive meeting and VIP client gifting">
+        <div class="solution-content">
+          <h3>Executive & VIP Gifts</h3>
+          <p>Elegant presentation sets for valued clients, board members, and visiting dignitaries.</p>
+        </div>
+      </div>
+
+      <div class="solution-card">
+        <img
+          src="https://images.unsplash.com/photo-1515169067868-5387ec356754?q=80&w=1200&auto=format&fit=crop"
+          alt="Festive corporate celebration event">
+        <div class="solution-content">
+          <h3>Festive & Event Gifts</h3>
+          <p>Avurudu, New Year, company anniversaries, product launches — make every occasion memorable.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── PRODUCTS ─────────────────────────────────────── -->
+<section class="products">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>What We Offer</h2>
+      <p>A complete range of certified gold coin options with premium packaging for every budget.</p>
+    </div>
+
+    <div class="product-wrapper">
+
+      <div class="product-box">
+        <h3>Gold Coin Options</h3>
+        <ul>
+          <li>22K &amp; 24K Certified Gold Coins</li>
+          <li>Sizes: 0.5g, 1g, 2g, 5g, 8g &amp; 10g</li>
+          <li>Luxury Presentation Gift Boxes</li>
+          <li>Corporate Logo Engraving / Branding</li>
+          <li>Custom Message Cards &amp; Inserts</li>
+          <li>Premium Packaging</li>
+        </ul>
+      </div>
+
+      <div class="product-box">
+        <h3>Corporate Benefits</h3>
+        <ul>
+          <li>Special Bulk Pricing &amp; Volume Discounts</li>
+          <li>Dedicated Corporate Account Manager</li>
+          <li>Fast &amp; Insured Delivery</li>
+          <li>Flexible Payment Terms for Companies</li>
+          <li>Invoicing &amp; Tax Documentation</li>
+          <li>After-Sales Support &amp; Repeat Orders</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS ────────────────────────────────────────── -->
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+
+      <div class="stat-box">
+        <h2>500+</h2>
+        <p>Corporate Orders Fulfilled</p>
+      </div>
+
+      <div class="stat-box">
+        <h2>100+</h2>
+        <p>Business Clients Served</p>
+      </div>
+
+      <div class="stat-box">
+        <h2>15+</h2>
+        <p>Industries Covered</p>
+      </div>
+
+      <div class="stat-box">
+        <h2>2008</h2>
+        <p>Established &amp; Trusted</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ─────────────────────────────────── -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>What Our Clients Say</h2>
+      <p>Trusted by leading businesses and organizations across Sri Lanka.</p>
+    </div>
+
+    <div class="testi-grid">
+
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <p>Ashadi Jewellers made our 25th anniversary gifting effortless. The branded packaging was stunning and every employee was genuinely moved.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">RK</div>
+          <div>
+            <strong>R. Karunaratne</strong>
+            <span>HR Director, MAS Holdings</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <p>We ordered 300 gold coins for our VIP clients. Quality was exceptional, delivery was on time, and the corporate pricing was very competitive.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">SP</div>
+          <div>
+            <strong>S. Perera</strong>
+            <span>Operations Manager, Sampath Bank</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <p>From first enquiry to delivery, the process was smooth and professional. We will definitely be returning for our Avurudu gifting this year.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">AF</div>
+          <div>
+            <strong>A. Fernando</strong>
+            <span>Admin Head, Cinnamon Hotels</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── PROCESS ──────────────────────────────────────── -->
+<section class="process" id="process">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Simple Ordering Process</h2>
+      <p>From enquiry to delivery — a smooth, professional experience every step of the way.</p>
+    </div>
+
+    <div class="process-grid">
+
+      <div class="process-step">
+        <div class="process-number">1</div>
+        <h3>Share Your Requirement</h3>
+      </div>
+
+      <div class="process-step">
+        <div class="process-number">2</div>
+        <h3>Select Coin Options</h3>
+      </div>
+
+      <div class="process-step">
+        <div class="process-number">3</div>
+        <h3>Approve Branding</h3>
+      </div>
+
+      <div class="process-step">
+        <div class="process-number">4</div>
+        <h3>Confirm &amp; Pay</h3>
+      </div>
+
+      <div class="process-step">
+        <div class="process-number">5</div>
+        <h3>Secure Delivery</h3>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ─────────────────────────────────────────── -->
+<section class="faq" id="faq">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Frequently Asked Questions</h2>
+      <p>Everything you need to know about our corporate gold gifting service.</p>
+    </div>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question">
+          What is the minimum order quantity?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          We accept corporate orders from as few as 10 coins. For large-scale requirements of 500+ units, we offer exclusive pricing and dedicated account management.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Can you engrave our company logo on the coins?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Yes! We offer custom branding on the packaging, gift boxes, and message cards. Logo engraving on coins is available for select sizes — our team will advise based on your order.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Do you deliver island-wide across Sri Lanka?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Yes, we offer fully insured island-wide delivery for all corporate orders. For bulk deliveries to multiple locations or branches, we can coordinate a delivery schedule with your team.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          How long does a corporate order take to process?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Standard orders are ready within 3–5 business days. Custom branding or large volumes may require 7–10 business days. We recommend reaching out at least 2 weeks before your event date.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Are the gold coins certified?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Absolutely. All our gold coins are certified for purity and come with authenticity documentation. We supply both 22K and 24K options to suit your requirements.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Do you provide tax invoices for companies?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Yes, we provide full tax invoices and company documentation for all corporate purchases. Payment can be arranged via bank transfer, cheque, or other agreed methods.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ──────────────────────────────────────────── -->
+<section class="cta">
+  <div class="container">
+    <h2>Ready to Gift Gold?</h2>
+    <p>
+      Partner with Ashadi Jewellers for premium corporate gold gifting solutions
+      tailored to your organization's needs and budget.
+    </p>
+    <div class="cta-actions">
+      <a href="#contact" class="btn">Get a Free Quote</a>
+      <a href="https://wa.me/94XXXXXXXXX" class="btn btn-outline">WhatsApp Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ──────────────────────────────────────── -->
+<section class="contact" id="contact">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Contact Corporate Sales</h2>
+      <p>Fill in the form and our corporate team will respond within one business day.</p>
+    </div>
+
+    <div class="contact-wrapper">
+
+      <!-- Info Panel -->
+      <div class="contact-info">
+        <h3>Get in Touch</h3>
+
+        <div class="contact-info-item">
+          <span class="contact-info-icon">📞</span>
+          <div>
+            <strong>Phone</strong>
+            <span>+94 XX XXX XXXX</span>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <span class="contact-info-icon">📧</span>
+          <div>
+            <strong>Email</strong>
+            <span>corporate@ashadijewellers.com</span>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <span class="contact-info-icon">💬</span>
+          <div>
+            <strong>WhatsApp</strong>
+            <span>Available for quick enquiries</span>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <span class="contact-info-icon">🕐</span>
+          <div>
+            <strong>Working Hours</strong>
+            <span>Monday – Sunday, 7 AM – 7 PM</span>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <span class="contact-info-icon">📍</span>
+          <div>
+            <strong>Location</strong>
+            <span>Colombo, Sri Lanka</span>
+          </div>
+        </div>
+
+        <div style="margin-top:32px; padding-top:24px; border-top:1px solid rgba(255,255,255,.1);">
+          <p style="color:#888; font-size:13px; margin-bottom:10px;">✔ &nbsp;Certified Gold Products</p>
+          <p style="color:#888; font-size:13px; margin-bottom:10px;">✔ &nbsp;Premium Branded Packaging</p>
+          <p style="color:#888; font-size:13px; margin-bottom:10px;">✔ &nbsp;Insured Island-wide Delivery</p>
+          <p style="color:#888; font-size:13px;">✔ &nbsp;Dedicated Corporate Account Support</p>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form">
+        <h3>Request a Quotation</h3>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your Name *</label>
+            <input type="text" id="name" placeholder="e.g. Kamala Perera" required>
+          </div>
+          <div class="form-group">
+            <label for="company">Company Name *</label>
+            <input type="text" id="company" placeholder="e.g. Sampath Bank PLC" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" placeholder="you@company.com" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone / WhatsApp *</label>
+            <input type="tel" id="phone" placeholder="+94 77 XXX XXXX" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="quantity">Estimated Quantity</label>
+            <select id="quantity">
+              <option value="">Select range</option>
+              <option>10 – 50 coins</option>
+              <option>50 – 150 coins</option>
+              <option>150 – 500 coins</option>
+              <option>500+ coins</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="occasion">Occasion / Purpose</label>
+            <select id="occasion">
+              <option value="">Select occasion</option>
+              <option>Employee Recognition</option>
+              <option>Executive / VIP Gifting</option>
+              <option>Festive / Avurudu Gifts</option>
+              <option>Company Anniversary</option>
+              <option>Product Launch</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Additional Requirements</label>
+          <textarea id="message" placeholder="Tell us about custom branding, delivery needs, timeline, or any other details…"></textarea>
+        </div>
+
+        <button class="btn" id="submitBtn" onclick="handleSubmit()" style="width:100%;font-size:16px;padding:16px;">
+          Send Enquiry →
+        </button>
+
+        <div class="form-success" id="formSuccess">
+          ✅ Thank you! Your enquiry has been received. Our corporate team will contact you within one business day.
+        </div>
+
+        <div id="formError" style="display:none;background:#fdecea;border:1px solid #e57373;border-radius:8px;padding:16px 20px;color:#c62828;font-size:15px;margin-top:16px;">
+          ❌ Something went wrong. Please try again or contact us directly via WhatsApp.
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ───────────────────────────────────────── -->
+<footer>
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div class="footer-col">
+        <span class="footer-logo">Ashadi Jewellers</span>
+        <p>Sri Lanka's trusted name in gold jewellery and corporate gifting since 2008.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Corporate</h4>
+        <a href="#solutions">Gift Solutions</a>
+        <a href="#process">Ordering Process</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Get a Quote</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="https://ashadijewellers.com">Main Website</a>
+        <a href="#">About Us</a>
+        <a href="#">Jewellery Collection</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>corporate@ashadijewellers.com</p>
+        <p>+94 XX XXX XXXX</p>
+        <p>Mon – Sat, 9 AM – 6 PM</p>
+        <p>Colombo, Sri Lanka</p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Ashadi Jewellers. All Rights Reserved. &nbsp;|&nbsp; www.ashadijewellers.com</p>
+    </div>
+
+  </div>
+</footer>
+
+<!-- ── WHATSAPP BUTTON ──────────────────────────────── -->
+<a href="https://wa.me/94XXXXXXXXX" class="whatsapp-btn" aria-label="Chat on WhatsApp" target="_blank">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<!-- ── SCRIPTS ───────────────────────────────────────── -->
+<script>
+
+// Hamburger toggle
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileNav.classList.toggle('open');
+});
+
+// Close mobile nav on link click
+mobileNav.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileNav.classList.remove('open');
+  });
+});
+
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    // Toggle clicked
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+// ── CONTACT FORM WITH EMAILJS ────────────────────────
+// EmailJS template variables used:
+//   {{from_name}}    – customer's name
+//   {{company}}      – company name
+//   {{from_email}}   – customer's email (EmailJS also uses this for reply-to)
+//   {{phone}}        – phone / WhatsApp
+//   {{quantity}}     – order quantity range
+//   {{occasion}}     – occasion / purpose
+//   {{message}}      – additional details
+
+function handleSubmit() {
+  const name     = document.getElementById('name').value.trim();
+  const company  = document.getElementById('company').value.trim();
+  const email    = document.getElementById('email').value.trim();
+  const phone    = document.getElementById('phone').value.trim();
+  const quantity = document.getElementById('quantity').value;
+  const occasion = document.getElementById('occasion').value;
+  const message  = document.getElementById('message').value.trim();
+
+  // Basic validation
+  if (!name || !company || !email || !phone) {
+    alert('Please fill in the required fields: Name, Company, Email and Phone.');
+    return;
+  }
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+
+  // Button loading state
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  const templateParams = {
+    from_name  : name,
+    company    : company,
+    from_email : email,
+    phone      : phone,
+    quantity   : quantity  || 'Not specified',
+    occasion   : occasion  || 'Not specified',
+    message    : message   || 'No additional details provided.',
+  };
+
+  emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+    .then(() => {
+      // Success
+      document.getElementById('formSuccess').style.display = 'block';
+      document.getElementById('formError').style.display   = 'none';
+      btn.textContent = 'Sent ✓';
+
+      // Clear all fields
+      ['name','company','email','phone','quantity','occasion','message'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.value = '';
+      });
+    })
+    .catch((err) => {
+      // Error
+      console.error('EmailJS error:', err);
+      document.getElementById('formError').style.display   = 'block';
+      document.getElementById('formSuccess').style.display = 'none';
+      btn.disabled = false;
+      btn.textContent = 'Send Enquiry →';
+    });
+}
+
+</script>
+</body>
+</html>
